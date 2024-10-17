@@ -1,5 +1,14 @@
+import { Providers } from "@src/components/provider/provider";
 import type { Metadata } from "next";
 import "./globals.css";
+
+import { Nunito } from "next/font/google";
+
+const nunito = Nunito({
+    display: "swap",
+    subsets: ["latin"],
+    variable: "--font-nunito",
+});
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -12,8 +21,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`antialiased`}>{children}</body>
+        <html lang="en" className="dark">
+            <body className={`${nunito.className} antialiased`}>
+                <Providers>{children}</Providers>
+            </body>
         </html>
     );
 }
