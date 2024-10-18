@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from "react";
+import PrimaryLayoutFooter from "./footer/footer";
 import PrimaryLayoutHeader from "./header/header";
 
 const PrimaryLayout: FC<PropsWithChildren> = ({ children }) => {
@@ -6,7 +7,7 @@ const PrimaryLayout: FC<PropsWithChildren> = ({ children }) => {
         <>
             <PrimaryLayoutHeader />
             <main>{children}</main>
-            <footer></footer>
+            <PrimaryLayoutFooter />
         </>
     );
 };

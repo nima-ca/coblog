@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${nunito.className} antialiased`}>
+            <body
+                className={`${nunito.className} antialiased relative min-h-svh`}
+            >
                 <Providers>
                     <PrimaryLayout>{children}</PrimaryLayout>
                 </Providers>
