@@ -2,6 +2,22 @@
     "extends": ["next/core-web-vitals", "next/typescript"],
 
     "rules": {
-        "no-console": "error"
+        // Possible Errors
+        "no-console": "error", // disallow the use of console
+        "no-debugger": "error", // disallow the use of debugger
+        "no-alert": "error", // disallow the use of alert,
+        "react-hooks/exhaustive-deps": "off",
+
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+        ], // disallow unused variables, except those whose names begin with _
+
+        // Stylistic Issues
+        "semi": ["error", "always"], // require semicolons at the end of statements
+        "quotes": ["error", "double"], // enforce the consistent use of double quotes
+        "no-extra-parens": "off", // disallow unnecessary parentheses
+        "eqeqeq": ["error", "always"], // require the use of === and !==
+        "no-trailing-spaces": "error" // disallow trailing whitespace
     }
 }
