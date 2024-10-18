@@ -1,6 +1,8 @@
 import { Button } from "@nextui-org/button";
+import { Link as NextUILink } from "@nextui-org/link";
 import ThemeSwitcher from "@src/components/themeSwitcher/ThemeSwitcher";
 import Link from "next/link";
+
 import { FC } from "react";
 
 const PrimaryLayoutHeader: FC = () => {
@@ -12,17 +14,37 @@ const PrimaryLayoutHeader: FC = () => {
                 </Link>
 
                 <div className="flex items-center gap-3">
-                    <Link className="font-medium" href="/">
+                    <NextUILink
+                        href="/"
+                        underline="hover"
+                        color="foreground"
+                        className="font-medium"
+                    >
                         Home
-                    </Link>
-                    <Link className="font-medium" href="/">
-                        Posts
-                    </Link>
+                    </NextUILink>
+                    <NextUILink
+                        href="/"
+                        underline="hover"
+                        color="foreground"
+                        className="font-medium"
+                    >
+                        Articles
+                    </NextUILink>
                     <div className="mx-8 flex items-center gap-3">
-                        <Button className="font-bold" color="secondary">
+                        <Button
+                            as={Link}
+                            color="secondary"
+                            href="/auth/login"
+                            className="font-bold"
+                        >
                             Login
                         </Button>
-                        <Button className="font-bold" color="secondary">
+                        <Button
+                            as={Link}
+                            color="secondary"
+                            href="/auth/register"
+                            className="font-bold"
+                        >
                             Register
                         </Button>
                     </div>
