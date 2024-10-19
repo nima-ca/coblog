@@ -5,7 +5,7 @@ import { FC } from "react";
 
 const PrimaryLayoutFooter: FC = () => {
     return (
-        <footer className="flex items-center justify-center bg-gray-100 dark:bg-[#141624] pt-16 pb-8 absolute bottom-0 w-full">
+        <footer className="flex items-center justify-center bg-gray-100 dark:bg-[#141624] pt-16 pb-8 mt-auto w-full">
             <div className="max-w-[75rem] w-full mx-auto">
                 <div className="grid grid-cols-3">
                     <div className="flex flex-col gap-2 max-w-72">
