@@ -1,3 +1,4 @@
+import { User } from "@src/types/user.types";
 import axios from "axios";
 import { apiErrorHandler } from "./apiErrorHandler";
 
@@ -6,7 +7,7 @@ const apiService = axios.create({ baseURL: BASE_URL });
 
 apiService.interceptors.request.use(
     (config) => {
-        const token = "";
+        const token = User.GetTokenFromStorage();
 
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
