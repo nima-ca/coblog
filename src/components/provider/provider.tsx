@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { FC, PropsWithChildren } from "react";
 import { ReactQueryProvider } from "./reactQuery/reactQuery.provider";
 import ThemeProvider from "./theme/theme.provider";
+import ToastProvider from "./toast/toast.provider";
 
 export const Providers: FC<PropsWithChildren> = ({ children }) => {
     const router = useRouter();
@@ -12,7 +13,9 @@ export const Providers: FC<PropsWithChildren> = ({ children }) => {
     return (
         <ReactQueryProvider>
             <NextUIProvider navigate={router.push}>
-                <ThemeProvider>{children}</ThemeProvider>
+                <ThemeProvider>
+                    <ToastProvider>{children}</ToastProvider>
+                </ThemeProvider>
             </NextUIProvider>
         </ReactQueryProvider>
     );
